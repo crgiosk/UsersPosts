@@ -1,0 +1,63 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.pruebadeingreso.ui.binds.UserBind" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        card_view:cardCornerRadius="@dimen/dimen_10dp"
+        card_view:cardElevation="@dimen/dimen_5dp">
+
+        <LinearLayout
+            android:id="@+id/contentCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_16dp">
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{user.name}"
+                android:textColor="@color/primaryColor"
+                tools:text="Mr Robot" />
+
+            <TextView
+                android:id="@+id/phone"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:drawableStart="@drawable/ic_phone"
+                android:drawablePadding="@dimen/dimen_5dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{user.numberPhone}"
+                tools:text="255 255 00" />
+
+            <TextView
+                android:id="@+id/email"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="@dimen/dimen_5dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{user.email}"
+                tools:text="let.me.here@fake.com" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

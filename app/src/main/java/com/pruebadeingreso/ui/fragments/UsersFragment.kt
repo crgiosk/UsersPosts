@@ -62,7 +62,7 @@ class UsersFragment : Fragment() {
 
     private fun setupUI() {
 
-        binding.usersRecyclerView?.apply {
+        binding.usersRecyclerView.apply {
             layoutManager = LinearLayoutManager(requireActivity(), RecyclerView.VERTICAL, false)
             setHasFixedSize(true)
             adapter = usersAdapter

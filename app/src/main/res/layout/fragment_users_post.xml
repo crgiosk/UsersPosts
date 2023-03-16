@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!--
+        TODO!!
+        impl progressBar and show/not by viewModel
+        -->
+
+    </data>
+
+    <LinearLayout
+        style="@style/backgroundGray"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        tools:context=".ui.fragments.UsersPostFragment">
+
+        <include
+            layout="@layout/user_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/dimen_16dp"
+            android:text="@string/your_posts"
+            android:textColor="@color/primaryColor" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/userPostRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_layout"
+            tools:listitem="@layout/item_post_layout" />
+
+    </LinearLayout>
+</layout>

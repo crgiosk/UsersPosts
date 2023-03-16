@@ -1,0 +1,48 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="userPost"
+            type="com.pruebadeingreso.ui.binds.PostUserBind" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:layout_marginBottom="@dimen/dimen_8dp"
+        card_view:cardCornerRadius="@dimen/dimen_10dp"
+        card_view:cardElevation="@dimen/dimen_5dp">
+
+        <LinearLayout
+            android:id="@+id/layoutCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_16dp">
+
+            <TextView
+                android:id="@+id/titleCardTextView"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{userPost.title}"
+                android:textColor="@color/primaryColor"
+                tool:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+
+            <TextView
+                android:id="@+id/bodyCardTextView"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:justificationMode="inter_word"
+                android:text="@{userPost.body}"
+                tool:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis velit sed ipsum cursus dapibus. Fusce sit amet mauris a orci finibus tempus. Cras vitae tellus rhoncus, ultricies ligula nec, lobortis erat. Sed volutpat ipsum laoreet, tristique urna id, pharetra erat. Praesent ullamcorper aliquam ligula, et pretium augue rutrum sed. Nunc nec accumsan mi. Cras diam nisi, rutrum nec massa vitae, pretium sollicitudin lacus. " />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
