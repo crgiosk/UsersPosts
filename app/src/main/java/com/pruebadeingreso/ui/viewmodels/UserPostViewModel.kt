@@ -19,19 +19,20 @@ class UserPostViewModel @Inject constructor(
     private val _usersList: MutableLiveData<List<UserBind>> = MutableLiveData()
     val usersList: LiveData<List<UserBind>> = _usersList
 
-    var showLoading = ObservableBoolean()
+    private val _showLoading: MutableLiveData<Boolean> = MutableLiveData(false)
+    val showLoading: LiveData<Boolean> = _showLoading
 
 
     fun showLoadingSet(isShow: Boolean) {
-        this.showLoading.set(isShow)
+        _showLoading.value = isShow
     }
 
     fun getAllUsers() {
         showLoadingSet(true)
         viewModelScope.launch {
-            showLoadingSet(false)
             val response = userUseCase.invoke()
             _usersList.value = response
+            showLoadingSet(false)
         }
     }
 }
