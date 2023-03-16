@@ -29,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{user.name}"
-                android:textColor="@color/primaryColor"
+                android:textColor="@color/green_2d6133"
                 tools:text="Mr Robot" />
 
             <TextView

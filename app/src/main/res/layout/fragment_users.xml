@@ -15,8 +15,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        style="@style/backgroundGray"
         tools:context=".ui.fragments.UsersFragment"
-        android:layout_margin="10dp">
+        android:padding="@dimen/dimen_15dp">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/findUserEditTextLayout"

@@ -2,36 +2,31 @@ package com.pruebadeingreso
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.pruebadeingreso.databinding.ActivityMainBinding
 import com.pruebadeingreso.ui.viewmodels.UserPostViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var navController: NavController
+    private lateinit var binding: ActivityMainBinding
 
-    private val binding: ActivityMainBinding by lazy {
-        ActivityMainBinding.inflate(layoutInflater)
-    }
-
-    private val viewModel: UserPostViewModel by lazy {
-        ViewModelProvider(this)[UserPostViewModel::class.java]
-    }
+    private lateinit var viewModel: UserPostViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
-        binding.lifecycleOwner = this
-        binding.viewModel = viewModel
 
-        navController = findNavController(R.id.main_nav_graph)
-        NavigationUI.setupActionBarWithNavController(this, navController)
+        viewModel = ViewModelProvider(this)[UserPostViewModel::class.java]
+
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp()
-    }
 }

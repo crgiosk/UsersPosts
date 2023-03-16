@@ -1,11 +1,11 @@
 package com.pruebadeingreso.core
 
 import android.view.View
+import android.view.ViewGroup
 import androidx.databinding.BindingAdapter
 
-object BindAdapters {
-    @BindingAdapter("android:visible_gone")
-    fun showLoading(view: View, isShow: Boolean){
-        view.visibility = if (isShow) View.VISIBLE else View.GONE
-    }
+
+@BindingAdapter("android:show_hide")
+fun showHide(view: View, show: Boolean) {
+    view.visibility = if (show) View.VISIBLE else View.GONE
 }

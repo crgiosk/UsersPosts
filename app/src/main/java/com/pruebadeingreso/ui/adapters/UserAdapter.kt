@@ -16,7 +16,7 @@ class UserAdapter(
     private val items: MutableList<UserBind> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemUserLayoutBinding.inflate(LayoutInflater.from(parent.context))
+        val binding = ItemUserLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 

@@ -8,16 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="primaryColor">#2d6133</color>
-    <color name="primaryLightColor">#5a8f5d</color>
-    <color name="primaryDarkColor">#264636</color>
-    <color name="primaryTextColor">#ffffff</color>
-    <color name="colorAccent">#5a8f5d</color>
-    <color name="colorSecondaryText">#757575</color>
-    <color name="colorIcons">#FFFFFF</color>
-    <color name="colorDivider">#BDBDBD</color>
+    <color name="green_2d6133">#2d6133</color>
+    <color name="green_5a8f5d">#5a8f5d</color>
+    <color name="green_264636">#264636</color>
+    <color name="white_ffffff">#ffffff</color>
 
-    <color name="gray_FAFAFA">#FAFAFA</color>
     <color name="gray_EEEEEE">#EEEEEE</color>
 
     <color name="shadow_progress_bar">#80979797</color>

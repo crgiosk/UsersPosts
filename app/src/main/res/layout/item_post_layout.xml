@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{userPost.title}"
-                android:textColor="@color/primaryColor"
+                android:textColor="@color/green_2d6133"
                 tool:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
 
             <TextView

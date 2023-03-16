@@ -7,18 +7,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.pruebadeingreso.R
 import com.pruebadeingreso.databinding.FragmentUsersBinding
 import com.pruebadeingreso.ui.adapters.UserAdapter
+import com.pruebadeingreso.ui.viewmodels.UserPostViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class UsersFragment : Fragment() {
 
     private val binding: FragmentUsersBinding by lazy {
-        FragmentUsersBinding.inflate(layoutInflater)
+        FragmentUsersBinding.inflate(layoutInflater, null, false)
     }
+
+    private val viewModel: UserPostViewModel by activityViewModels()
 
     private val usersAdapter: UserAdapter by lazy {
         UserAdapter(
@@ -41,6 +47,10 @@ class UsersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupUI()
         setupListeners()
+        viewModel.usersList.observe(viewLifecycleOwner) {
+            usersAdapter.setData(it)
+        }
+        viewModel.getAllUsers()
     }
 
     private fun setupListeners() {
@@ -64,10 +74,9 @@ class UsersFragment : Fragment() {
 
     private fun setupUI() {
 
-        binding.usersRecyclerView.apply {
-            layoutManager = LinearLayoutManager(requireActivity(), RecyclerView.VERTICAL, false)
-            setHasFixedSize(true)
+        binding.usersRecyclerView.run {
             adapter = usersAdapter
+            layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         }
     }
 
