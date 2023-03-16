@@ -7,8 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.pruebadeingreso.R
 import com.pruebadeingreso.databinding.FragmentUsersBinding
 import com.pruebadeingreso.ui.adapters.UserAdapter
 
@@ -21,8 +23,8 @@ class UsersFragment : Fragment() {
     private val usersAdapter: UserAdapter by lazy {
         UserAdapter(
             onClickItem =  {
-                //TODO!!
-                //navigate to posts screen
+                //TODO!! set selected user in viewModel
+                findNavController().navigate(R.id.action_usersFragment_to_usersPostFragment)
             }
         )
     }
