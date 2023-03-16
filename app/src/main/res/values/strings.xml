@@ -4,4 +4,5 @@
     <string name="hin_find_user">Buscar Usuario</string>
     <string name="title_view_posts">Ver publicaciones</string>
     <string name="your_posts">Tus posts</string>
+    <string name="empty_user_list">List is empty</string>
 </resources>

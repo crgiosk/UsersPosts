@@ -22,6 +22,9 @@ class UserPostViewModel @Inject constructor(
     private val _showLoading: MutableLiveData<Boolean> = MutableLiveData(false)
     val showLoading: LiveData<Boolean> = _showLoading
 
+    private val _isEmptyList: MutableLiveData<Boolean> = MutableLiveData(false)
+    val isEmptyList: LiveData<Boolean> = _isEmptyList
+
 
     fun showLoadingSet(isShow: Boolean) {
         _showLoading.value = isShow

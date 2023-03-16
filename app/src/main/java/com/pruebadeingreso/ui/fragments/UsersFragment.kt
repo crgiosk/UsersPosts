@@ -47,9 +47,7 @@ class UsersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupUI()
         setupListeners()
-        viewModel.usersList.observe(viewLifecycleOwner) {
-            usersAdapter.setData(it)
-        }
+        setupObservers()
         viewModel.getAllUsers()
     }
 
@@ -62,10 +60,11 @@ class UsersFragment : Fragment() {
             }
 
             override fun afterTextChanged(search: Editable?) {
-                search?.let { safeSearch ->
+                search.toString()?.let { safeSearch ->
+
+
                     //todo!!
-                    //add validacion in viewModel and notify to adapter
-                    //And create a observer to by
+                    //call dao filtering data from db
                 }
             }
 
@@ -77,6 +76,12 @@ class UsersFragment : Fragment() {
         binding.usersRecyclerView.run {
             adapter = usersAdapter
             layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
+        }
+    }
+
+    private fun setupObservers() {
+        viewModel.usersList.observe(viewLifecycleOwner) {
+            usersAdapter.setData(it)
         }
     }
 
