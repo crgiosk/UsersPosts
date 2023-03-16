@@ -19,4 +19,8 @@
 
     <color name="gray_FAFAFA">#FAFAFA</color>
     <color name="gray_EEEEEE">#EEEEEE</color>
+
+    <color name="shadow_progress_bar">#80979797</color>
+
+
 </resources>
