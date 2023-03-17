@@ -28,7 +28,7 @@ class UsersFragment : Fragment() {
 
     private val usersAdapter: UserAdapter by lazy {
         UserAdapter(
-            onClickItem =  {
+            onClickItem = {
                 viewModel.userSelected = it
                 findNavController().navigate(R.id.action_usersFragment_to_usersPostFragment)
             }
@@ -48,16 +48,16 @@ class UsersFragment : Fragment() {
         setupUI()
         setupListeners()
         setupObservers()
-        viewModel.getAllUsers()
+        viewModel.getUsers()
     }
 
     private fun setupListeners() {
         binding.findUserEditText.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            }
+            //TODO!! create a ExtensionFucntion
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
 
             override fun afterTextChanged(search: Editable?) {
                 search.toString()?.let { safeSearch ->
@@ -81,7 +81,7 @@ class UsersFragment : Fragment() {
 
     private fun setupObservers() {
         viewModel.usersList.observe(viewLifecycleOwner) {
-            usersAdapter.setData(it)
+            usersAdapter.updateData(it)
         }
     }
 

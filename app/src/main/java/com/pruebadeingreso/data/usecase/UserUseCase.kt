@@ -11,6 +11,14 @@ class UserUseCase @Inject constructor(
     //its mean Db or Api service
     //
     suspend operator fun invoke(): List<UserBind> {
-        return userRepository.getAllUsers()
+        val dataFromBd = userRepository.getAllUsersLocal()
+        return if (dataFromBd.isEmpty()) {
+            userRepository.saverUsers(
+                userRepository.getUsersFromApi().map { it.toEntity() }
+            )
+            userRepository.getAllUsersLocal().map { it.toBind() }
+        } else {
+            dataFromBd.map { it.toBind() }
+        }
     }
 }

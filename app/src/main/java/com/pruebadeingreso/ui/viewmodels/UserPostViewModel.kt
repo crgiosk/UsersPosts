@@ -37,7 +37,7 @@ class UserPostViewModel @Inject constructor(
         _showLoading.value = isShow
     }
 
-    fun getAllUsers() {
+    fun getUsers() {
         showLoadingSet(true)
         viewModelScope.launch {
             val response = userUseCase.invoke()

@@ -2,6 +2,7 @@ package com.pruebadeingreso.data.network.models.user
 
 
 import com.google.gson.annotations.SerializedName
+import com.pruebadeingreso.data.local.entities.UserEntity
 import com.pruebadeingreso.ui.binds.UserBind
 
 data class UserApiResponse(
@@ -22,11 +23,11 @@ data class UserApiResponse(
     @SerializedName("website")
     val website: String
 ) {
-    fun toBind(): UserBind {
-        return UserBind(
-            idUser = id,
+    fun toEntity(): UserEntity {
+        return UserEntity(
+            userId = id,
             name = name,
-            numberPhone = phone,
+            phone = phone,
             email = email
         )
     }
