@@ -32,9 +32,12 @@ class UserPostViewModel @Inject constructor(
     private val _isEmptyList: MutableLiveData<Boolean> = MutableLiveData(false)
     val isEmptyList: LiveData<Boolean> = _isEmptyList
 
-
     fun showLoadingSet(isShow: Boolean) {
         _showLoading.value = isShow
+    }
+
+    fun isEmptyListSet(isEmpty: Boolean) {
+        _isEmptyList.value = isEmpty
     }
 
     fun getUsers() {
@@ -53,6 +56,18 @@ class UserPostViewModel @Inject constructor(
             _postByUserList.value = data
             showLoadingSet(false)
 
+        }
+    }
+
+    fun searchUserByName(
+        name: String,
+        onResults: (List<UserBind>) -> Unit
+    ) {
+
+        viewModelScope.launch {
+            onResults.invoke(
+                userUseCase.searchUserByName(name)
+            )
         }
     }
 }

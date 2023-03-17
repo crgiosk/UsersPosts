@@ -22,4 +22,8 @@ class UserRepository @Inject constructor(
     suspend fun saverUsers(users: List<UserEntity>) {
         userDAO.insertUsers(users)
     }
+
+    suspend fun searchUserByName(name: String): List<UserEntity> {
+        return userDAO.searchUserByName(name)
+    }
 }

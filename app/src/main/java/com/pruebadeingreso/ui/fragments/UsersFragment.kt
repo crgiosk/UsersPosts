@@ -1,8 +1,6 @@
 package com.pruebadeingreso.ui.fragments
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.pruebadeingreso.R
+import com.pruebadeingreso.core.Extensions.onAfterTextChanged
 import com.pruebadeingreso.databinding.FragmentUsersBinding
 import com.pruebadeingreso.ui.adapters.UserAdapter
 import com.pruebadeingreso.ui.viewmodels.UserPostViewModel
@@ -40,6 +39,8 @@ class UsersFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.viewModel = viewModel
         return binding.root
     }
 
@@ -52,23 +53,16 @@ class UsersFragment : Fragment() {
     }
 
     private fun setupListeners() {
-        binding.findUserEditText.addTextChangedListener(object : TextWatcher {
-
-            //TODO!! create a ExtensionFucntion
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-
-            override fun afterTextChanged(search: Editable?) {
-                search.toString()?.let { safeSearch ->
-
-
-                    //todo!!
-                    //call dao filtering data from db
+        binding.findUserEditText.onAfterTextChanged { text ->
+            if (text.isNotEmpty()) {
+                viewModel.searchUserByName(text) {
+                    usersAdapter.updateData(it)
+                    viewModel.isEmptyListSet(it.isEmpty())
                 }
+            } else {
+                viewModel.getUsers()
             }
-
-        })
+        }
     }
 
     private fun setupUI() {

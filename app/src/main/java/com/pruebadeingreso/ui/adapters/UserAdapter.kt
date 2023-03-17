@@ -20,10 +20,10 @@ class UserAdapter(
         return ViewHolder(binding)
     }
 
-    fun setData(newItems: List<UserBind>) {
+    fun updateData(newItems: List<UserBind>) {
         this.items.clear()
         this.items.addAll(newItems)
-        notifyItemChanged(0, items.lastIndex)
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int = items.count()

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -27,6 +28,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/findUserEditTextLayout"
                 android:layout_width="match_parent"
@@ -49,26 +51,38 @@
                 android:id="@+id/usersRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:show_hide="@{!viewModel.isEmptyList}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/findUserEditTextLayout"
-                tools:listitem="@layout/item_user_layout" />
+                tools:listitem="@layout/item_user_layout"
+                tools:visibility="gone" />
 
-            <TextView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:layout_marginTop="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:elevation="10dp"
                 android:show_hide="@{viewModel.isEmptyList}"
-                android:text="@string/empty_user_list"
-                android:textAlignment="center"
-                android:textSize="@dimen/text_size_20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/findUserEditTextLayout" />
+                app:layout_constraintTop_toBottomOf="@+id/findUserEditTextLayout"
+                card_view:cardCornerRadius="@dimen/dimen_10dp"
+                card_view:cardElevation="@dimen/dimen_5dp">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-black"
+                    android:gravity="center"
+                    android:padding="@dimen/dimen_10dp"
+                    android:text="@string/empty_user_list"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_size_20sp" />
 
+            </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

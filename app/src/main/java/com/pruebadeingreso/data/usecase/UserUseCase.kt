@@ -7,9 +7,7 @@ import javax.inject.Inject
 class UserUseCase @Inject constructor(
     private val userRepository: UserRepository
 ) {
-    //todo!! this functions should return list
-    //its mean Db or Api service
-    //
+
     suspend operator fun invoke(): List<UserBind> {
         val dataFromBd = userRepository.getAllUsersLocal()
         return if (dataFromBd.isEmpty()) {
@@ -20,5 +18,9 @@ class UserUseCase @Inject constructor(
         } else {
             dataFromBd.map { it.toBind() }
         }
+    }
+
+    suspend fun searchUserByName(name: String): List<UserBind> {
+        return userRepository.searchUserByName(name).map { it.toBind() }
     }
 }
