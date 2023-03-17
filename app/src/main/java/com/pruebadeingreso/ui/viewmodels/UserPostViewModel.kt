@@ -1,6 +1,5 @@
 package com.pruebadeingreso.ui.viewmodels
 
-import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -50,7 +49,6 @@ class UserPostViewModel @Inject constructor(
     fun getPostByUser() {
         showLoadingSet(true)
         viewModelScope.launch {
-
             val data = postUseCase.getPostByUser(userSelected?.idUser ?: 0)
             _postByUserList.value = data
             showLoadingSet(false)

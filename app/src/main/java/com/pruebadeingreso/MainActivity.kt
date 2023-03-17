@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this)[UserPostViewModel::class.java]
 
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
+
     }
 
 }
