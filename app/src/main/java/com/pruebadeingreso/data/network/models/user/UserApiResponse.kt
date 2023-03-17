@@ -6,10 +6,6 @@ import com.pruebadeingreso.data.local.entities.UserEntity
 import com.pruebadeingreso.ui.binds.UserBind
 
 data class UserApiResponse(
-    @SerializedName("address")
-    val address: Address,
-    @SerializedName("company")
-    val company: Company,
     @SerializedName("email")
     val email: String,
     @SerializedName("id")
@@ -17,11 +13,7 @@ data class UserApiResponse(
     @SerializedName("name")
     val name: String,
     @SerializedName("phone")
-    val phone: String,
-    @SerializedName("username")
-    val username: String,
-    @SerializedName("website")
-    val website: String
+    val phone: String
 ) {
     fun toEntity(): UserEntity {
         return UserEntity(

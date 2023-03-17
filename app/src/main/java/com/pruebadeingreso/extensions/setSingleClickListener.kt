@@ -7,6 +7,7 @@ class setSingleClickListener(
     private val block: () -> Unit,
     private val wait: Long = 1000L
 ) : View.OnClickListener {
+    //todo!! remove this class
 
     private var lastClickTime = 0L
 
