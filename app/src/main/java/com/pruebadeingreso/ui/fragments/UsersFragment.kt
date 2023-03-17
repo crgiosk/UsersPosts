@@ -29,7 +29,7 @@ class UsersFragment : Fragment() {
     private val usersAdapter: UserAdapter by lazy {
         UserAdapter(
             onClickItem =  {
-                //TODO!! set selected user in viewModel
+                viewModel.userSelected = it
                 findNavController().navigate(R.id.action_usersFragment_to_usersPostFragment)
             }
         )

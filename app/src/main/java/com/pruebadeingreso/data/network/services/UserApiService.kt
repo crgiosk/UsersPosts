@@ -1,6 +1,6 @@
 package com.pruebadeingreso.data.network.services
 
-import com.pruebadeingreso.data.network.clients.UserApiClient
+import com.pruebadeingreso.data.network.user.UserApiClient
 import com.pruebadeingreso.data.network.models.user.UserApiResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

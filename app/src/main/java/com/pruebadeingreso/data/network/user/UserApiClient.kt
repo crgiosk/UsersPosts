@@ -1,4 +1,4 @@
-package com.pruebadeingreso.data.network.clients
+package com.pruebadeingreso.data.network.user
 
 import com.pruebadeingreso.data.network.models.user.UserApiResponse
 import retrofit2.Response

@@ -4,10 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <!--
-        TODO!!
-        impl progressBar and show/not by viewModel
-        -->
 
     </data>
 
@@ -20,6 +16,7 @@
         tools:context=".ui.fragments.UsersPostFragment">
 
         <include
+            android:id="@+id/layoutUserSelected"
             layout="@layout/user_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

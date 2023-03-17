@@ -1,6 +1,7 @@
 package com.pruebadeingreso.di
 
-import com.pruebadeingreso.data.network.clients.UserApiClient
+import com.pruebadeingreso.data.network.user.PostApiClient
+import com.pruebadeingreso.data.network.user.UserApiClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,7 +18,7 @@ object NetWorkModule {
     @Provides
     fun provideRetrofitInstance(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://jsonplaceholder.typicode.com/")
+            .baseUrl("https://jsonplaceholder.typicode.com")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
@@ -26,5 +27,10 @@ object NetWorkModule {
     @Provides
     fun provideApiClient(retrofit: Retrofit): UserApiClient =
         retrofit.create(UserApiClient::class.java)
+
+    @Singleton
+    @Provides
+    fun providePostApiClient(retrofit: Retrofit): PostApiClient =
+        retrofit.create(PostApiClient::class.java)
 
 }
