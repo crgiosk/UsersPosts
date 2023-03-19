@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/usersFragment"
-        android:name="com.pruebadeingreso.ui.fragments.UsersFragment"
+        android:name="com.users_posts.ui.fragments.UsersFragment"
         android:label="UsersFragment"
         tools:layout="@layout/fragment_users">
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/usersPostFragment"
-        android:name="com.pruebadeingreso.ui.fragments.UsersPostFragment"
+        android:name="com.users_posts.ui.fragments.UsersPostFragment"
         android:label="UsersPostFragment"
         tools:layout="@layout/fragment_users_post" />
 </navigation>

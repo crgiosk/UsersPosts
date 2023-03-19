@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.pruebadeingreso.ui.viewmodels.UserPostViewModel" />
+            type="com.users_posts.ui.viewmodels.UserPostViewModel" />
 
     </data>
 

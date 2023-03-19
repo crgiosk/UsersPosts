@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.pruebadeingreso.ui.viewmodels.UserPostViewModel" />
+            type="com.users_posts.ui.viewmodels.UserPostViewModel" />
 
     </data>
 
@@ -16,7 +16,7 @@
         style="@style/backgroundGray"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".ui.activities.MainActivity">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/nav_host_fragment"

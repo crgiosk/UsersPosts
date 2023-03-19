@@ -6,7 +6,7 @@
 
         <variable
             name="userPost"
-            type="com.pruebadeingreso.ui.binds.PostUserBind" />
+            type="com.users_posts.ui.binds.PostUserBind" />
     </data>
 
     <androidx.cardview.widget.CardView
