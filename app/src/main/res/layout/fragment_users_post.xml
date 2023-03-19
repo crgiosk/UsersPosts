@@ -8,6 +8,7 @@
     </data>
 
     <LinearLayout
+        android:id="@+id/fragment_users_posts_parent_layout"
         style="@style/backgroundGray"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

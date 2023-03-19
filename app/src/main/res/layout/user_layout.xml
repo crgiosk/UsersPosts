@@ -24,7 +24,7 @@
             android:padding="@dimen/dimen_16dp">
 
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/nameUserLayout"
                 style="@style/TextAppearance.AppCompat.Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
                 tools:text="Mr Robot" />
 
             <TextView
-                android:id="@+id/phone"
+                android:id="@+id/phoneLayout"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
                 tools:text="255 255 00" />
 
             <TextView
-                android:id="@+id/email"
+                android:id="@+id/emailLayout"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

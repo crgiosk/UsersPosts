@@ -16,7 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.fragments.UsersFragment">
+        tools:context=".ui.fragments.UsersFragment"
+        android:id="@+id/fragment_users_parent_layout">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutMain"
