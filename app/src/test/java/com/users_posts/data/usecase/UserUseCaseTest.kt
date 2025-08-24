@@ -3,7 +3,7 @@ package com.users_posts.data.usecase
 
 import com.users_posts.data.local.entities.UserEntity
 import com.users_posts.data.network.models.user.UserApiResponse
-import com.users_posts.data.repositories.UserRepository
+import com.users_posts.data.repositories.UserRepositoryImpl
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -17,7 +17,7 @@ import org.junit.Test
 
 class UserUseCaseTest {
     @RelaxedMockK
-    private lateinit var repository: UserRepository
+    private lateinit var repository: UserRepositoryImpl
 
     private lateinit var useCase: UserUseCase
 

@@ -1,6 +1,6 @@
 package com.users_posts.data.usecase
 
-import com.users_posts.data.repositories.PostRepository
+import com.users_posts.data.repositories.PostRepositoryImpl
 import com.users_posts.ui.binds.PostUserBind
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
@@ -13,7 +13,7 @@ import org.junit.Test
 
 class PostUseCaseTest {
     @RelaxedMockK
-    private lateinit var repository: PostRepository
+    private lateinit var repository: PostRepositoryImpl
 
     private lateinit var useCase: PostUseCase
 

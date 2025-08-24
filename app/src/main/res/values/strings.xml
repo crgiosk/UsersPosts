@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Prueba de Ingreso</string>
+    <string name="app_name">Posts User</string>
 
     <string name="hin_find_user">Buscar Usuario</string>
     <string name="title_view_posts">Ver publicaciones</string>

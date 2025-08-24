@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace 'com.pruebadeingreso'
+    namespace 'com.users_posts'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.pruebadeingreso"
+        applicationId "com.users_posts"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -41,13 +41,17 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
+    kotlin {
+        jvmToolchain(17)
+    }
+
 }
 
 dependencies {

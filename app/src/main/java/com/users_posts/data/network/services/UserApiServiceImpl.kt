@@ -6,11 +6,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class UserApiService @Inject constructor(
+class UserApiServiceImpl @Inject constructor(
     private val apiClient: UserApiClient
-) {
+): UserAPIService {
 
-    suspend fun getAllUsers(): List<UserApiResponse> {
+    override suspend fun getAllUsers(): List<UserApiResponse> {
         return withContext(Dispatchers.IO) {
             val response = apiClient.getAllUsers()
             response.body() ?: emptyList()
